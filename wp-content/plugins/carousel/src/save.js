@@ -1,8 +1,13 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useState } from 'react';
 import { RichText } from '@wordpress/block-editor';
 
 const Save = ({ attributes }) => {
-	const { titleG, titleB, itemsValue, num } = attributes;
+	const { titleG, titleB, itemsValue } = attributes;
+	const [num, setNum] = useState(0); // Состояние для хранения индекса текущего активного слайда
+
+	const onChangeNum = (index) => {
+		setNum(index); // Обновляем текущий активный слайд
+	};
 
 	return (
 		<div className="banner">
@@ -26,7 +31,7 @@ const Save = ({ attributes }) => {
 									</p>
 								</div>
 								<a href={item.link} className="btn">
-									Order Service
+									Заказать услугу
 								</a>
 							</div>
 							<div className="col6">
@@ -35,10 +40,11 @@ const Save = ({ attributes }) => {
 						</div>
 					))}
 				</div>
-				<div className="indicatorList">
+				<div className='indicatorList'>
 					{itemsValue.map((item, index) => (
 						<span
 							key={index}
+							onClick={() => onChangeNum(index)} // Обработчик клика для изменения текущего слайда
 							className={num === index ? 'carouselIndicator active' : 'carouselIndicator'}
 						></span>
 					))}
@@ -49,5 +55,3 @@ const Save = ({ attributes }) => {
 };
 
 export default Save;
-
-

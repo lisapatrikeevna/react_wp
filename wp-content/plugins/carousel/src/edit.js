@@ -7,9 +7,12 @@ import image from './assets/sliderImg.png'
 
 export default function Edit({ attributes, setAttributes }) {
 	console.log(attributes);
-	// const [num, setNum] = useState(1);
-	const { titleG, titleB, itemsValue, num } = attributes;
 
+	const { titleG, titleB, itemsValue, num } = attributes;
+	const onChangeNum = (index) => {
+		setAttributes({ num: index });
+	};
+	// const [num, setNum] = useState(1);
 	// Используем useState для хранения данных и функции их обновления
 	// const [itemsValue, setItemsValue] = useState([
 	// 	{ title: 'title banner', text: 'text banner', link: '', img: 'image' },
@@ -31,17 +34,17 @@ export default function Edit({ attributes, setAttributes }) {
 	const updateTitleG = (value) => {
 		setAttributes({ titleG: value });
 	};
-
-	const updateText = (value) => {
-		setAttributes({ text: value });
+	const updateTitleB = (value) => {
+		setAttributes({ titleB: value });
 	};
+	// const updateText = (value) => {
+	// 	setAttributes({ text: value });
+	// };
 
-	const onChangeNum = (index) => {
-		setAttributes({ num: index });
-	};
+
 
 	const updateItem = (index, key, value) => {
-		console.log('key, value', key, value);
+		console.log(' updateItem  key, value', key, value);
 		const newItemsValue = [...itemsValue];
 		newItemsValue[index][key] = value;
 		setAttributes({ itemsValue: newItemsValue });
@@ -66,13 +69,13 @@ export default function Edit({ attributes, setAttributes }) {
 					<div className='container'>
 						<h3 className='bannerName'>
 							<RichText
-								onChange={(value) => updateTitleG}
+								onChange={(value) => updateTitleG(value)}
 								value={titleG}
 							/>
 							<span>
 								<RichText
 									tagName="span"
-									onChange={(value) => updateTitleB}
+									onChange={(value) => updateTitleB(value)}
 									value={titleB}
 								/>
 							</span>
@@ -126,7 +129,7 @@ export default function Edit({ attributes, setAttributes }) {
 											render={({ open }) => (
 												<Button onClick={open}>
 													{item.img ? (
-														<img src={item.img} alt={item.title} className='img' />
+														<img key={item.img} src={item.img} alt={item.title} className='img' />
 													) : (
 														<>
 															<img src={image} alt={item.title} className='img' /> {/* Используем image как дефолтное изображение */}

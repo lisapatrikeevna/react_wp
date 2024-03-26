@@ -34,14 +34,18 @@ function Edit({
   setAttributes
 }) {
   console.log(attributes);
-  // const [num, setNum] = useState(1);
   const {
     titleG,
     titleB,
     itemsValue,
     num
   } = attributes;
-
+  const onChangeNum = index => {
+    setAttributes({
+      num: index
+    });
+  };
+  // const [num, setNum] = useState(1);
   // Используем useState для хранения данных и функции их обновления
   // const [itemsValue, setItemsValue] = useState([
   // 	{ title: 'title banner', text: 'text banner', link: '', img: 'image' },
@@ -64,18 +68,17 @@ function Edit({
       titleG: value
     });
   };
-  const updateText = value => {
+  const updateTitleB = value => {
     setAttributes({
-      text: value
+      titleB: value
     });
   };
-  const onChangeNum = index => {
-    setAttributes({
-      num: index
-    });
-  };
+  // const updateText = (value) => {
+  // 	setAttributes({ text: value });
+  // };
+
   const updateItem = (index, key, value) => {
-    console.log('key, value', key, value);
+    console.log(' updateItem  key, value', key, value);
     const newItemsValue = [...itemsValue];
     newItemsValue[index][key] = value;
     setAttributes({
@@ -95,11 +98,11 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "bannerName"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    onChange: value => updateTitleG,
+    onChange: value => updateTitleG(value),
     value: titleG
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "span",
-    onChange: value => updateTitleB,
+    onChange: value => updateTitleB(value),
     value: titleB
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wrap"
@@ -142,6 +145,7 @@ function Edit({
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       onClick: open
     }, item.img ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      key: item.img,
       src: item.img,
       alt: item.title,
       className: "img"
@@ -238,9 +242,13 @@ const Save = ({
   const {
     titleG,
     titleB,
-    itemsValue,
-    num
+    itemsValue
   } = attributes;
+  const [num, setNum] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0); // Состояние для хранения индекса текущего активного слайда
+
+  const onChangeNum = index => {
+    setNum(index); // Обновляем текущий активный слайд
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "banner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -271,7 +279,7 @@ const Save = ({
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: item.link,
     className: "btn"
-  }, "Order Service")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C \u0443\u0441\u043B\u0443\u0433\u0443")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col6"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: item.img,
@@ -281,6 +289,8 @@ const Save = ({
     className: "indicatorList"
   }, itemsValue.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     key: index,
+    onClick: () => onChangeNum(index) // Обработчик клика для изменения текущего слайда
+    ,
     className: num === index ? 'carouselIndicator active' : 'carouselIndicator'
   })))));
 };
@@ -378,7 +388,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/carousel-lisa","version":"0.1.0","title":"Carousel","category":"text","icon":"superhero","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"carousel-lisa","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"itemsValue":{"type":"array","default":[{"title":"title banner","text":"text banner","link":"","img":""},{"title":"Автопарк сервиса содержит","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atqu consectetur adipisicing elit. Atque, rem","link":"","img":""},{"title":"title 2","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, rem?","link":"","img":"./assets/sliderImg.png"}],"itemsValue":{"type":"object","properties":{"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string","source":"attribute","selector":"img","attribute":"src"}}}},"titleG":{"type":"string","default":"Сервис Газелькин это"},"titleB":{"type":"string","default":"Большой ассортимент"},"num":{"type":"number","default":0}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/carousel","version":"0.1.0","title":"Carousel","category":"text","icon":"superhero","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"carousel-lisa","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"itemsValue":{"type":"array","default":[{"title":"title banner","text":"text banner","link":"","img":""},{"title":"Автопарк сервиса содержит","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atqu consectetur adipisicing elit. Atque, rem","link":"","img":""},{"title":"title 2","text":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, rem?","link":"","img":"./assets/sliderImg.png"}],"itemsValue":{"type":"object","properties":{"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string","source":"attribute","selector":"img","attribute":"src"}}}},"titleG":{"type":"string","default":"Сервис Газелькин это"},"titleB":{"type":"string","default":"Большой ассортимент"},"num":{"type":"number","default":0}}}');
 
 /***/ })
 
