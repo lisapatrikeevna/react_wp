@@ -128,7 +128,6 @@
 	width: 400px;
 	height: 20px;
 	display: flex;
-	//border: 2px solid saddlebrown;
 	bottom: 50px;
 }
 
@@ -149,10 +148,11 @@
 
 //media query
 @media screen and (max-width: 1300px) {
-	//.container {
-	//  padding: 3% 7%;
-	//}
-	//.filterWrap {
-	//  flex-wrap: wrap;
-	//}
+	.container {
+		padding: 3% 7%;
+	}
+
+	.filterWrap {
+		flex-wrap: wrap;
+	}
 }
