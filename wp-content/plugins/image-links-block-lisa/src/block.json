@@ -1,0 +1,126 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/image-links-block-lisa",
+	"version": "0.1.0",
+	"title": "Image Links Block Lisa",
+	"category": "text",
+	"icon": "superhero",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "image-links-block-lisa",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": "div",
+			"default": ""
+		},
+		"bg_color": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"text_color": {
+			"type": "string",
+			"default": "#ffffff"
+		},
+		"itemsList1": {
+			"type": "array",
+			"default": [
+				{
+					"id": "qwe1",
+					"title": "Выгодный переезд со скидкой 25%",
+					"text": "Дневные часы с 16:00 до 20:00",
+					"link": "",
+					"img": "http://www.perevozilka.com/image/catalog/link-block/5d20kdvfcfa.jpg"
+				},
+				{
+					"id": "qwe2",
+					"title": "Скидка 30% на предварительный заказ",
+					"text": "Планируйте переезд заранее и экономьте",
+					"link": "",
+					"img": "http://www.perevozilka.com/image/catalog/link-block/rectangle6.png"
+				}
+			],
+			"itemsList1": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"text": {
+						"type": "string"
+					},
+					"link": {
+						"type": "string"
+					},
+					"img": {
+						"type": "string",
+						"source": "attribute",
+						"selector": "img",
+						"attribute": "src"
+					}
+				}
+			}
+		},
+		"itemsList2": {
+			"type": "array",
+			"default": [
+				{
+					"id": "qwe3",
+					"title": "Доставка от магазина до дома за 540 Р",
+					"text": "Дневные часы с 16:00 до 20:00",
+					"link": "",
+					"img": "http://www.perevozilka.com/image/catalog/link-block/rectangle5.png"
+				},
+				{
+					"id": "qwe4",
+					"title": "Бесплатная оценка вашего переезда",
+					"text": "Дневные часы с 16:00 до 20:00",
+					"link": "",
+					"img": "http://www.perevozilka.com/image/catalog/link-block/rectangle8.png"
+				},
+				{
+					"id": "qwe5",
+					"title": "Онлайн оплата - комфортно, быстро, бесопасно",
+					"text": "Дневные часы с 16:00 до 20:00",
+					"link": "",
+					"img": "http://www.perevozilka.com/image/catalog/link-block/rectangle9.png"
+				}
+			],
+			"itemsValue": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"text": {
+						"type": "string"
+					},
+					"link": {
+						"type": "string"
+					},
+					"img": {
+						"type": "string",
+						"source": "attribute",
+						"selector": "img",
+						"attribute": "src"
+					}
+				}
+			}
+		}
+	}
+}
