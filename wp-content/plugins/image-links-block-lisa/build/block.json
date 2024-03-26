@@ -65,10 +65,7 @@
             "type": "string"
           },
           "img": {
-            "type": "string",
-            "source": "attribute",
-            "selector": "img",
-            "attribute": "src"
+            "type": "string"
           }
         }
       }
@@ -98,7 +95,7 @@
           "img": "http://www.perevozilka.com/image/catalog/link-block/rectangle9.png"
         }
       ],
-      "itemsValue": {
+      "itemsValue2": {
         "type": "object",
         "properties": {
           "id": {
@@ -114,10 +111,7 @@
             "type": "string"
           },
           "img": {
-            "type": "string",
-            "source": "attribute",
-            "selector": "img",
-            "attribute": "src"
+            "type": "string"
           }
         }
       }

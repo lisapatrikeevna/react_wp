@@ -38,8 +38,7 @@ function Edit({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container bg"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "row",
-    style: " margin: 60px 0 0; position: relative; min-height: 300px;"
+    className: "row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-md-6"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -57,11 +56,17 @@ function Edit({
       className: "wrapp-img__link_text"
     }, item.text)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: item.img,
-      style: "width: 841px;"
+      style: {
+        width: '841px'
+      }
     })));
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "row",
-    style: " margin: 0 0 60px; position: relative; min-height: 300px;"
+    style: {
+      margin: '0 0 60px',
+      position: 'relative',
+      minHeight: '300px'
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-md-4"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -79,7 +84,9 @@ function Edit({
       className: "wrapp-img__link_text"
     }, item.text)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: item.img,
-      style: "width: 841px;"
+      style: {
+        width: '841px'
+      }
     })));
   }))))));
 }
@@ -173,9 +180,60 @@ __webpack_require__.r(__webpack_exports__);
  * @return {Element} Element to render.
  */
 function save() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, 'Image Links Block Lisa – hello from the saved content!');
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "container bg"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "col-md-6"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "pos-rel"
+  }, itemsList1.map(item => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      key: item.id,
+      href: item.link,
+      className: "wrapp-img__link"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "wrapp-img__link_deck"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "wrapp-img__link_title"
+    }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "wrapp-img__link_text"
+    }, item.text)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: item.img,
+      style: {
+        width: '841px'
+      }
+    })));
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "row",
+    style: {
+      margin: '0 0 60px',
+      position: 'relative',
+      minHeight: '300px'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "col-md-4"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "pos-rel"
+  }, itemsList2.map(item => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+      key: item.id,
+      href: item.link,
+      className: "wrapp-img__link"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "wrapp-img__link_deck"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "wrapp-img__link_title"
+    }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "wrapp-img__link_text"
+    }, item.text)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: item.img,
+      style: {
+        width: '841px'
+      }
+    })));
+  })))));
 }
 
 /***/ }),
@@ -260,7 +318,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/image-links-block-lisa","version":"0.1.0","title":"Image Links Block Lisa","category":"text","icon":"superhero","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"image-links-block-lisa","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"text":{"type":"string","source":"text","selector":"div","default":""},"bg_color":{"type":"string","default":"#000000"},"text_color":{"type":"string","default":"#ffffff"},"itemsList1":{"type":"array","default":[{"id":"qwe1","title":"Выгодный переезд со скидкой 25%","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/5d20kdvfcfa.jpg"},{"id":"qwe2","title":"Скидка 30% на предварительный заказ","text":"Планируйте переезд заранее и экономьте","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle6.png"}],"itemsList1":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string","source":"attribute","selector":"img","attribute":"src"}}}},"itemsList2":{"type":"array","default":[{"id":"qwe3","title":"Доставка от магазина до дома за 540 Р","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle5.png"},{"id":"qwe4","title":"Бесплатная оценка вашего переезда","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle8.png"},{"id":"qwe5","title":"Онлайн оплата - комфортно, быстро, бесопасно","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle9.png"}],"itemsValue":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string","source":"attribute","selector":"img","attribute":"src"}}}}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/image-links-block-lisa","version":"0.1.0","title":"Image Links Block Lisa","category":"text","icon":"superhero","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"image-links-block-lisa","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"text":{"type":"string","source":"text","selector":"div","default":""},"bg_color":{"type":"string","default":"#000000"},"text_color":{"type":"string","default":"#ffffff"},"itemsList1":{"type":"array","default":[{"id":"qwe1","title":"Выгодный переезд со скидкой 25%","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/5d20kdvfcfa.jpg"},{"id":"qwe2","title":"Скидка 30% на предварительный заказ","text":"Планируйте переезд заранее и экономьте","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle6.png"}],"itemsList1":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string"}}}},"itemsList2":{"type":"array","default":[{"id":"qwe3","title":"Доставка от магазина до дома за 540 Р","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle5.png"},{"id":"qwe4","title":"Бесплатная оценка вашего переезда","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle8.png"},{"id":"qwe5","title":"Онлайн оплата - комфортно, быстро, бесопасно","text":"Дневные часы с 16:00 до 20:00","link":"","img":"http://www.perevozilka.com/image/catalog/link-block/rectangle9.png"}],"itemsValue2":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"text":{"type":"string"},"link":{"type":"string"},"img":{"type":"string"}}}}}}');
 
 /***/ })
 
